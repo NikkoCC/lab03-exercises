@@ -11,3 +11,6 @@ A dictionary or map (don't you mean set? doesn't matter they're all generally un
 quickly identify a list has duplicates but doesn't return information on the duplicates. I'm sure
 a much smarter person than me could figure it out though, I mean surely. Then again we're working with
 integers here, not objects.
+
+I assume you want me to write it here:
+Our branch is "aHEAD" of the main branch in terms of commits. This is a branch with changes to the most recent main.
