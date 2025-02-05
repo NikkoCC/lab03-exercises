@@ -1,24 +1,39 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashSet;
 
 public class FindDuplicates {
 
-	/**
-	 * 
-	 * @param dog is the input list
-	 * @return a list containing how many times a duplicate integer was encountered (two 7s means there are 2 duplicates out of 3 total)
-	 */
+    /**
+     * 
+     * @param dog is the input list
+     * @return a list containing how many times a duplicate integer was encountered
+     *         (two 7s means there are 2 duplicates out of 3 total)
+     */
     public static List<Integer> findDuplicatesNestedLoops(List<Integer> dog) {
         List<Integer> results = new ArrayList<Integer>();
 
-        for(int i=0; i<dog.size(); i++) {
-        	for(int j=i+1; j<dog.size();j++) {
-        		if(dog.get(i).equals(dog.get(j))) {
-        			results.add(dog.get(i));
-        			break;
-        		}
-        	}
+        // commented out 2/4/25 9:18pm by nikko
+        // for(int i=0; i<dog.size(); i++) {
+        // for(int j=i+1; j<dog.size();j++) {
+        // if(dog.get(i).equals(dog.get(j))) {
+        // results.add(dog.get(i));
+        // break;
+        // }
+        // }
+        // }
+
+        HashSet<Integer> cat = new HashSet<Integer>();
+        int catOldSize = 0;
+
+        for (int i = 0; i < dog.size(); i++) {
+            catOldSize = cat.size();
+            cat.add(dog.get(i));
+
+            if (cat.size() == catOldSize) {
+                results.add(dog.get(i));
+            }
         }
         return results;
     }
